@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,162 +9,168 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            color: white;
-            background: black;
+            color: #ffffff;
+            background: linear-gradient(180deg, #141e30, #243b55);
             text-align: center;
-        }h1 {
-        padding: 20px 0;
-        font-size: 2.5rem;
-        color: #ff00ff;
-        text-shadow: 0 0 15px #ff00ff;
-        animation: glow 1.5s infinite alternate;
-        background: black;
-    }
-
-    @keyframes glow {
-        from {
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
         }
-        to {
-            text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+
+        h1 {
+            padding: 20px 0;
+            font-size: 2.5rem;
+            color: #00e5ff;
+            text-shadow: 0 0 15px #00e5ff, 0 0 30px #6a5acd;
+            animation: glowEffect 1.5s infinite alternate;
         }
-    }
 
-    form {
-        max-width: 500px;
-        margin: auto;
-        padding: 20px;
-        background: rgba(26, 26, 26, 0.9);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
+        @keyframes glowEffect {
+            0% {
+                text-shadow: 0 0 15px #00e5ff, 0 0 30px #6a5acd;
+            }
+            50% {
+                text-shadow: 0 0 15px #6a5acd, 0 0 30px #00ff87;
+            }
+            100% {
+                text-shadow: 0 0 15px #00ff87, 0 0 30px #00e5ff;
+            }
+        }
 
-    label {
-        display: block;
-        text-align: left;
-        font-size: 1rem;
-        color: #ffffff;
-        margin-top: 10px;
-    }
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(36, 59, 85, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00e5ff, 0 0 25px #6a5acd;
+        }
 
-    input, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border-radius: 5px;
-        border: none;
-        font-size: 1rem;
-        background: #333;
-        color: white;
-        transition: 0.3s;
-    }
-    
-    input:focus, textarea:focus {
-        box-shadow: 0 0 10px #00ffcc;
-        outline: none;
-    }
-    
-    .order-summary {
-        background: #222;
-        border-radius: 10px;
-        padding: 15px;
-        margin: 20px 0;
-        color: #ffffff;
-        text-align: center;
-    }
-    
-    .order-summary h2 {
-        color: #ff00ff;
-    }
-    
-    .total-amount {
-        font-size: 1.5rem;
-        color: #00ffcc;
-        margin-top: 15px;
-    }
-    
-    .note {
-        font-size: 0.9rem;
-        color: #ffffff;
-        margin-top: 20px;
-    }
-    
-    .note strong {
-        color: #ff00ff;
-    }
+        label {
+            display: block;
+            text-align: left;
+            font-size: 1rem;
+            color: #b0c7d1;
+            margin-top: 10px;
+        }
 
-    .submit-container {
-        text-align: center;
-        margin-top: 20px;
-    }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            background: #1e293b;
+            color: #ffffff;
+            transition: 0.3s;
+        }
 
-    .submit-container button {
-        background-color: #ff00ff;
-        border: none;
-        color: white;
-        padding: 12px 25px;
-        font-size: 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0 0 10px #ff00ff;
-    }
+        input:focus, textarea:focus {
+            box-shadow: 0 0 10px #00e5ff;
+            outline: none;
+        }
 
-    .submit-container button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px #ff00ff;
-    }
-</style>
+        .order-summary {
+            background: rgba(20, 30, 48, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #ffffff;
+            text-align: center;
+            box-shadow: 0 0 15px #00e5ff, 0 0 25px #6a5acd;
+        }
 
+        .order-summary h2 {
+            color: #00e5ff;
+            text-shadow: 0 0 10px #00e5ff, 0 0 20px #6a5acd;
+        }
+
+        .total-amount {
+            font-size: 1.5rem;
+            color: #00ff87;
+            margin-top: 15px;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #b0c7d1;
+            margin-top: 20px;
+        }
+
+        .note strong {
+            color: #00e5ff;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .submit-container button {
+            background: linear-gradient(90deg, #00e5ff, #6a5acd, #00ff87);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 15px #00e5ff, 0 0 25px #6a5acd;
+            animation: buttonGlow 2s infinite alternate;
+        }
+
+        .submit-container button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #00e5ff, 0 0 40px #6a5acd;
+        }
+
+        @keyframes buttonGlow {
+            0% {
+                box-shadow: 0 0 15px #00e5ff, 0 0 25px #6a5acd;
+            }
+            50% {
+                box-shadow: 0 0 15px #6a5acd, 0 0 25px #00ff87;
+            }
+            100% {
+                box-shadow: 0 0 15px #00ff87, 0 0 25px #00e5ff;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Delivery Details</h1>
     <form>
         <label for="customerName">Name:</label>
-        <input type="text" id="customerName" name="customer_name" placeholder="Enter your name" required><label for="contact">Contact:</label>
-    <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-    <label for="address">Delivery Address:</label>
-    <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
-
-    <label for="deliveryDate">Date to Deliver:</label>
-    <input type="date" id="deliveryDate" name="delivery_date" required>
-
-    <label for="deliveryTime">Time to Deliver:</label>
-    <input type="time" id="deliveryTime" name="delivery_time" required>
-
-    <div class="order-summary">
-        <h2>Order Summary</h2>
-        <p>Items Total: $<span id="itemsTotal">0.00</span></p>
-        <p>Delivery Fee: $<span id="deliveryFee">5.00</span></p>
-        <p class="total-amount">Total: $<span id="totalAmount">5.00</span></p>
-    </div>
-
-    <div class="note">
-        <p><strong>Note:</strong> Adjust the payment amount on the next page to generate the correct PayNow QR code.</p>
-        <p>For order tracking, email <strong>corporate@hs88livesg.com</strong>.</p>
-    </div>
-
-    <script>
-        let urlParams = new URLSearchParams(window.location.search);
-        let F12_amount = parseFloat(urlParams.get('F12_amount')) || 0;
-        let deliveryFee = 5.00;
-        let totalWithDelivery = F12_amount + deliveryFee;
+        <input type="text" id="customerName" name="customer_name" placeholder="Enter your name" required>
         
-        document.getElementById("itemsTotal").textContent = F12_amount.toFixed(2);
-        document.getElementById("deliveryFee").textContent = deliveryFee.toFixed(2);
-        document.getElementById("totalAmount").textContent = totalWithDelivery.toFixed(2);
-    </script>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
 
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-    <stripe-buy-button
-        buy-button-id="buy_btn_1Q2znBPEk8yBJ3V6my2d3YK3"
-        publishable-key="pk_live_51Pkk3SPEk8yBJ3V69CncvwIFwNSX2e06dd5JNZ00hDa5DwYzw1KRRKJxvvyH5x6c1LJoFg7wApN6Sz2VroyTgCvS00eurZSEwP">
-    </stripe-buy-button>
-</form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
+
+        <label for="deliveryDate">Date to Deliver:</label>
+        <input type="date" id="deliveryDate" name="delivery_date" required>
+
+        <label for="deliveryTime">Time to Deliver:</label>
+        <input type="time" id="deliveryTime" name="delivery_time" required>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Items Total: $<span id="itemsTotal">0.00</span></p>
+            <p>Delivery Fee: $<span id="deliveryFee">15.00</span></p>
+            <p class="total-amount">Total: $<span id="totalAmount">15.00</span></p>
+        </div>
+
+        <div class="note">
+            <p><strong>Note:</strong> Adjust the payment amount on the next page to generate the correct PayNow QR code.</p>
+            <p>For order tracking, WhatsApp<strong> +6580174905</strong></p>
+        </div>
+
+        <div class="submit-container">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 </body>
 </html>
