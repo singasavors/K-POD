@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Our Vape Store</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #0d0d0d;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .invoice-container {
+        width: 95%;
+        max-width: 1200px;
+        background: #1a1a1a;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+        animation: rainbowGlow 3s linear infinite;
+    }
+
+    @keyframes rainbowGlow {
+        0% { box-shadow: 0 0 20px #ff0000, 0 0 40px #ff7f00; }
+        25% { box-shadow: 0 0 20px #00ff00, 0 0 40px #0000ff; }
+        50% { box-shadow: 0 0 20px #4b0082, 0 0 40px #9400d3; }
+        75% { box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff; }
+        100% { box-shadow: 0 0 20px #ff0000, 0 0 40px #ff7f00; }
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #ff00ff;
+        text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+        0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+        100% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: #1e1e1e;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 15px #ff00ff;
+    }
+
+    th, td {
+        border: 1px solid #ffffff;
+        padding: 15px;
+        text-align: left;
+        font-size: 1.1rem;
+    }
+
+    th {
+        background: #ff00ff;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .highlight {
+        color: #00ffcc;
+        font-weight: bold;
+    }
+
+    .payment-details {
+        margin-top: 20px;
+        padding: 20px;
+        background: #282828;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+        text-align: center;
+    }
+
+    .paynow-img {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 10px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 180px;
+        text-align: center;
+    }
+
+    .btn-back {
+        background: linear-gradient(90deg, #ff00ff, #00ffff);
+        color: white;
+        box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+        animation: rainbowGlow 1.5s infinite alternate;
+    }
+
+    .btn-back:hover {
+        transform: scale(1.1);
+        background: linear-gradient(90deg, #00ffff, #ff00ff);
+    }
+
+    .btn-contact {
+        background: linear-gradient(90deg, #00ffcc, #00ffff);
+        color: white;
+        box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffff;
+        animation: rainbowGlow 1.5s infinite alternate;
+    }
+
+    .btn-contact:hover {
+        transform: scale(1.1);
+        background: linear-gradient(90deg, #00ffff, #00ffcc);
+    }
+
+    @media (max-width: 768px) {
+        .invoice-container {
+            width: 100%;
+            padding: 15px;
+        }
+        th, td {
+            font-size: 0.9rem;
+            padding: 10px;
+        }
+        .btn-container {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="invoice-container">
+        <h1>Invoice - Our Vape Store</h1>
+        <h2>Customer Order Summary</h2>
+        
+        <table>
+            <tr><th>Description</th><th>Details</th></tr>
+            <tr><td>Customer Name</td><td id="customerName">Loading...</td></tr>
+            <tr><td>Email Address</td><td id="emailAddress">Loading...</td></tr>
+            <tr><td>Contact Number</td><td id="contactNumber">Loading...</td></tr>
+            <tr><td>Delivery Address</td><td id="deliveryAddress">Loading...</td></tr>
+            <tr><td>Date to Deliver</td><td id="deliveryDate">Loading...</td></tr>
+            <tr><td>Time to Deliver</td><td id="deliveryTime">Loading...</td></tr>
+            <tr><td>Products Ordered</td><td id="productsOrdered">Loading...</td></tr>
+            <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
+        </table>
+
+        <!-- Payment Instructions -->
+        <div class="payment-details">
+            <h3>Payment Instructions</h3>
+            <p>Scan or Screenshot the PayNow QR Code</p>
+            <img src="https://s.tfrbot.com/h/faIeip" alt="PayNow QR Code" class="paynow-img">
+
+            <p><strong>PayNow VPA:</strong> <span class="highlight">+6580170839#GRAB</span></p>
+            <p>After completing the payment, send a screenshot to our support team.</p>
+        </div>
+
+        <div class="btn-container">
+            <a href="javascript:history.back()" class="btn btn-back">Go Back</a>
+            <a href="https://wa.me/+6580174905" target="_blank" class="btn btn-contact">Contact Us</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            document.getElementById("customerName").textContent = urlParams.get("name") || "Not provided";
+            document.getElementById("emailAddress").textContent = urlParams.get("email") || "Not provided";
+            document.getElementById("contactNumber").textContent = urlParams.get("contact") || "Not provided";
+            document.getElementById("deliveryAddress").textContent = urlParams.get("address") || "Not provided";
+            document.getElementById("deliveryDate").textContent = urlParams.get("delivery_date") || "Not provided";
+            document.getElementById("deliveryTime").textContent = urlParams.get("delivery_time") || "Not provided";
+            document.getElementById("productsOrdered").textContent = urlParams.get("products") || "Not provided";
+            document.getElementById("totalAmount").textContent = `$${parseFloat(urlParams.get("F12_amount") || 0).toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
