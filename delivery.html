@@ -109,10 +109,10 @@
 </head>
 <body>
     <h1>Delivery Details</h1>
-    <form>
+    <form id="deliveryForm">
         <label for="customerName">Name:</label>
         <input type="text" id="customerName" name="customer_name" placeholder="Enter your name" required>
-        
+
         <label for="contact">Contact:</label>
         <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
 
@@ -133,6 +133,8 @@
             <p>Items Total: $<span id="itemsTotal">0.00</span></p>
             <p>Delivery Fee: $<span id="deliveryFee">15.00</span></p>
             <p class="total-amount">Total: $<span id="totalAmount">15.00</span></p>
+            <input type="hidden" id="F12Amount" name="F12_amount" value="0">
+            <input type="hidden" id="productsData" name="products" value="">
         </div>
 
         <div class="note">
@@ -146,27 +148,47 @@
     </form>
 
     <script>
-        // Function to get query parameters from the URL
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
-        // Update the Items Total and Total Amount
-        function updateAmounts() {
-            const F12_Amount = parseFloat(getQueryParam('F12_Amount')) || 0; // Default to 0 if not found
-            const deliveryFee = 15.00;
+        function updateFormFields() {
+            document.getElementById('customerName').value = getQueryParam('name') || "";
+            document.getElementById('email').value = getQueryParam('email') || "";
+            document.getElementById('contact').value = getQueryParam('contact') || "";
+            document.getElementById('address').value = getQueryParam('address') || "";
+            document.getElementById('deliveryDate').value = getQueryParam('delivery_date') || "";
+            document.getElementById('deliveryTime').value = getQueryParam('delivery_time') || "";
+            document.getElementById('F12Amount').value = getQueryParam('F12_amount') || "0.00";
+            document.getElementById('productsData').value = getQueryParam('products') || "";
+            
+            let itemsTotal = parseFloat(getQueryParam('F12_amount')) || 0;
+            let deliveryFee = 15.00;
+            let totalAmount = itemsTotal + deliveryFee;
 
-            // Update the Items Total
-            document.getElementById('itemsTotal').textContent = F12_Amount.toFixed(2);
-
-            // Update the Total Amount
-            const totalAmount = F12_Amount + deliveryFee;
+            document.getElementById('itemsTotal').textContent = itemsTotal.toFixed(2);
             document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
         }
 
-        // Run the function on page load
-        updateAmounts();
+        document.addEventListener("DOMContentLoaded", updateFormFields);
+
+        document.getElementById("deliveryForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = encodeURIComponent(document.getElementById("customerName").value);
+            const email = encodeURIComponent(document.getElementById("email").value);
+            const contact = encodeURIComponent(document.getElementById("contact").value);
+            const address = encodeURIComponent(document.getElementById("address").value);
+            const deliveryDate = encodeURIComponent(document.getElementById("deliveryDate").value);
+            const deliveryTime = encodeURIComponent(document.getElementById("deliveryTime").value);
+            const amount = encodeURIComponent(document.getElementById("F12Amount").value);
+            const products = encodeURIComponent(document.getElementById("productsData").value);
+
+            const url = `https://singasavors.github.io/K-POD/delivery-invoice.html?name=${name}&email=${email}&contact=${contact}&address=${address}&delivery_date=${deliveryDate}&delivery_time=${deliveryTime}&F12_amount=${amount}&products=${products}`;
+
+            window.location.href = url;
+        });
     </script>
 </body>
 </html>
