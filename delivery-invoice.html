@@ -27,12 +27,12 @@ body {
 
 /* Full-Screen Invoice Container */
 .invoice-container {
-    width: 100%;  /* Ensure it takes the full width */
+    width: 100%;
     max-width: 100%;
     background: #1a1a1a;
     padding: 20px;
-    border-radius: 0; /* Remove border-radius for full edge fit */
-    box-shadow: none; /* Remove box shadow on edges */
+    border-radius: 0;
+    box-shadow: none;
     animation: rainbowGlow 3s linear infinite;
 }
 
@@ -64,7 +64,7 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     background: #1e1e1e;
-    border-radius: 0; /* Remove rounding for full width */
+    border-radius: 0;
     overflow: hidden;
     box-shadow: 0 0 15px #ff00ff;
 }
@@ -78,7 +78,7 @@ th, td {
 
 th {
     background: #ff00ff;
-    color: #000; /* Black text for better readability */
+    color: #000;
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -94,8 +94,8 @@ th {
 .payment-details {
     margin-top: 20px;
     padding: 20px;
-    background: rgba(40, 40, 40, 0.95); /* Slight transparency */
-    border-radius: 0; /* Remove rounding for full width */
+    background: rgba(40, 40, 40, 0.95);
+    border-radius: 0;
     box-shadow: 0 0 25px #ff00ff, 0 0 40px #00ffff;
     text-align: center;
 }
@@ -104,13 +104,15 @@ th {
 .paynow-img {
     display: block;
     width: 100%;
-    max-width: 300px;
-    height: 300px;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     margin: 10px auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
+    object-fit: contain;
 }
 
 /* PayNow & Bank Info */
@@ -153,9 +155,9 @@ th {
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1; /* Ensure buttons stretch evenly */
+    flex: 1;
     text-align: center;
-    border: 2px solid #ffffff; /* White border for better contrast */
+    border: 2px solid #ffffff;
     margin: 5px;
 }
 
@@ -234,13 +236,11 @@ th {
         <p>Scan the PayNow QR Code below</p>
 
         <!-- QR Code with optimized dimensions for scanning -->
-        <img src="https://s.tfrbot.com/h/CPhx0u" 
-             alt="PayNow QR Code" 
-             class="paynow-img" 
-             loading="lazy"
-             width="300" 
-             height="300"
-             style="image-rendering: crisp-edges; image-rendering: -webkit-optimize-contrast; display: block; margin: auto;">
+        <img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png"
+     alt="PayNow QR Code"
+     class="paynow-img"
+     width="300"
+     height="300">
 
         <div class="paynow-info">
             <p><strong>PayNow VPA:</strong> <span class="neon-text">+6580174905#GRAB</span></p>
