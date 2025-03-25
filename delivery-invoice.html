@@ -4,161 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invoice - Our Vape Store</title>
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@300;400;700&display=swap");
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+      scroll-behavior: smooth;
+    }
 
-  body {
-    background: #0d0d0d;
-    color: white;
-    text-align: center;
-    min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-  }
+    body {
+      background: linear-gradient(to bottom right, #fff0f6, #ffffff);
+      color: #333;
+      line-height: 1.6;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
 
-  .invoice-container {
-    width: 100%;
-    background: #1a1a1a;
-    padding: 30px 0;
-    box-shadow: 0 0 25px #ff00ff, 0 0 35px #00ffff;
-    animation: rainbowBorder 6s linear infinite;
-  }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
 
-  @keyframes rainbowBorder {
-    0% { box-shadow: 0 0 20px #ff0000, 0 0 40px #ff7f00; }
-    25% { box-shadow: 0 0 20px #00ff00, 0 0 40px #0000ff; }
-    50% { box-shadow: 0 0 20px #4b0082, 0 0 40px #9400d3; }
-    75% { box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff; }
-    100% { box-shadow: 0 0 20px #ff0000, 0 0 40px #ff7f00; }
-  }
+    h1, h2 {
+      text-align: center;
+      color: deeppink;
+      font-family: "Baloo 2", cursive;
+      margin-bottom: 15px;
+      font-size: 2em;
+      text-shadow: 1px 1px 0 #ffcde8;
+    }
 
-  h1 {
-    font-size: 2.8rem;
-    color: #ff00ff;
-    text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-    animation: glow 1.5s infinite alternate;
-  }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      border-radius: 10px;
+      background: white;
+      animation: fadeIn 0.6s ease-in-out;
+    }
 
-  @keyframes glow {
-    from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
-    to { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
-  }
+    th, td {
+      border: 1px solid #f3cce9;
+      padding: 12px 15px;
+      font-size: 14px;
+      text-align: left;
+    }
 
-  h2 {
-    margin-top: 10px;
-    color: white;
-    font-size: 1.6rem;
-    text-shadow: 0 0 10px #00ffff;
-  }
+    th {
+      background-color: deeppink;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px auto;
-    background: #1e1e1e;
-    box-shadow: 0 0 12px #ff00ff;
-  }
+    .payment-details {
+      background: #fff0f6;
+      border-radius: 14px;
+      padding: 24px 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+    }
 
-  thead tr {
-    background: linear-gradient(90deg, #ff00ff, #00ffff);
-    background-size: 300% 300%;
-    animation: rainbowHead 6s linear infinite;
-  }
+    .payment-details:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
 
-  @keyframes rainbowHead {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+    .payment-details h3 {
+      color: deeppink;
+      margin-bottom: 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
 
-  th, td {
-    padding: 14px;
-    border: 1px solid #ff99cc;
-    text-align: left;
-    font-size: 1.05rem;
-  }
+    .paynow-img {
+      display: block;
+      margin: 0 auto 15px;
+      border: 6px solid #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+      max-width: 280px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
 
-  th {
-    background: transparent;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
+    .paynow-img:hover {
+      transform: scale(1.03);
+    }
 
-  .highlight {
-    color: #00ffcc;
-    font-weight: bold;
-    text-shadow: 0 0 10px #00ffcc;
-  }
+    .paynow-info, .bank-info {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-  .payment-details {
-    background: rgba(26, 26, 26, 0.95);
-    padding: 25px 20px;
-    margin-top: 30px;
-    box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff;
-    width: 100%;
-    text-align: left;
-    color: white;
-  }
+    .highlight-green {
+      color: #28f728;
+      font-weight: bold;
+    }
 
-  .payment-details h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    text-shadow: 0 0 8px #00ffff;
-  }
+    .highlight-red {
+      color: #ac0000;
+      font-weight: bold;
+    }
 
-  .paynow-img {
-    display: block;
-    width: 100%;
-    max-width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #ff00ff;
-    margin: 20px auto;
-  }
+    .upload-btn {
+      display: block;
+      background: linear-gradient(135deg, deeppink, #ff77c0);
+      color: white;
+      padding: 14px 35px;
+      text-align: center;
+      border-radius: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      margin: 25px auto 0;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-  .upload-btn {
-    background: linear-gradient(90deg, #ff00ff, #00ffff);
-    background-size: 400% 400%;
-    animation: rainbowBtn 8s ease infinite;
-    color: white;
-    padding: 16px 30px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    border: none;
-    margin: 30px auto 0;
-    width: calc(100% - 40px);
-    max-width: 400px;
-    box-shadow: 0 0 20px #ff00ff;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
+    .upload-btn:hover {
+      background: linear-gradient(135deg, #ff1493, #ff91c9);
+      transform: scale(1.05);
+    }
 
-  .upload-btn:hover {
-    transform: scale(1.06);
-    filter: brightness(1.2);
-  }
+    #receiptForm {
+      display: none;
+    }
 
-  @keyframes rainbowBtn {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .upload-btn { width: 100%; font-size: 14px; padding: 12px; }
+    }
 
-  @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.3rem; }
-    th, td { font-size: 0.95rem; padding: 10px; }
-    .upload-btn { width: 90%; font-size: 1rem; }
-  }
-</style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <div class="invoice-container">
@@ -195,52 +187,65 @@
   </div>
 
   <form id="receiptForm" action="https://formsubmit.co/endgameis21@hotmail.com" method="POST" enctype="multipart/form-data" style="display:none;">
-    <input type="hidden" name="_subject" value="New Delivery Invoice Submission">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://s.tfrbot.com/tAWgdr">
+  <input type="hidden" name="_subject" value="New Delivery Invoice Submission">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://singasavors.github.io/K-POD/thank-you.html">
+  <input type="hidden" name="_autoresponse" value="Thank you for submitting your receipt. We’ll review and get back to you shortly.">
+  <input type="hidden" name="_honey" style="display:none">
+  <input type="hidden" name="_replyto" id="replyToField">
 
-    <input type="hidden" name="Customer Name" id="inputName">
-    <input type="hidden" name="Email Address" id="inputEmail">
-    <input type="hidden" name="Contact Number" id="inputContact">
-    <input type="hidden" name="Delivery Address" id="inputHome">
-    <input type="hidden" name="Date to Deliver" id="inputDOB">
-    <input type="hidden" name="Time to Deliver" id="inputDriver">
-    <input type="hidden" name="Products Ordered" id="inputWork">
-    <input type="hidden" name="Total Amount $" id="inputAmount">
-    <input type="file" name="receipt" id="receiptUpload" accept="image/*,application/pdf">
-  </form>
+  <input type="hidden" name="Customer Name" id="inputName">
+  <input type="hidden" name="Email Address" id="inputEmail">
+  <input type="hidden" name="Contact Number" id="inputContact">
+  <input type="hidden" name="Delivery Address" id="inputHome">
+  <input type="hidden" name="Date to Deliver" id="inputDOB">
+  <input type="hidden" name="Time to Deliver" id="inputDriver">
+  <input type="hidden" name="Products Ordered" id="inputWork">
+  <input type="hidden" name="Total Amount $" id="inputAmount">
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      document.getElementById("customerName").textContent = urlParams.get("name") || "Not provided";
-      document.getElementById("emailAddress").textContent = urlParams.get("email") || "Not provided";
-      document.getElementById("contactNumber").textContent = urlParams.get("contact") || "Not provided";
-      document.getElementById("deliveryAddress").textContent = urlParams.get("address") || "Not provided";
-      document.getElementById("deliveryDate").textContent = urlParams.get("delivery_date") || "Not provided";
-      document.getElementById("deliveryTime").textContent = urlParams.get("delivery_time") || "Not provided";
-      document.getElementById("productsOrdered").textContent = urlParams.get("products") || "Not provided";
-      document.getElementById("totalAmount").textContent = `$${parseFloat(urlParams.get("F12_amount") || 0).toFixed(2)}`;
-    });
+  <input type="file" name="receipt" id="receiptUpload" accept="image/*,application/pdf">
+</form>
 
-    function uploadReceipt() {
-      const fileInput = document.getElementById("receiptUpload");
-      fileInput.click();
-      fileInput.onchange = () => {
-        if (fileInput.files[0]) {
-          document.getElementById("inputName").value = document.getElementById("customerName").textContent;
-          document.getElementById("inputEmail").value = document.getElementById("emailAddress").textContent;
-          document.getElementById("inputContact").value = document.getElementById("contactNumber").textContent;
-          document.getElementById("inputHome").value = document.getElementById("deliveryAddress").textContent;
-          document.getElementById("inputDOB").value = document.getElementById("deliveryDate").textContent;
-          document.getElementById("inputDriver").value = document.getElementById("deliveryTime").textContent;
-          document.getElementById("inputWork").value = document.getElementById("productsOrdered").textContent;
-          document.getElementById("inputAmount").value = document.getElementById("totalAmount").textContent;
-          document.getElementById("receiptForm").submit();
-        }
-      };
-    }
-  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const get = key => urlParams.get(key) || "Not provided";
+
+    document.getElementById("customerName").textContent = get("name");
+    document.getElementById("emailAddress").textContent = get("email");
+    document.getElementById("contactNumber").textContent = get("contact");
+    document.getElementById("deliveryAddress").textContent = get("address");
+    document.getElementById("deliveryDate").textContent = get("delivery_date");
+    document.getElementById("deliveryTime").textContent = get("delivery_time");
+    document.getElementById("productsOrdered").textContent = get("products");
+
+    const total = parseFloat(get("F12_amount")) || 0;
+    document.getElementById("totalAmount").textContent = `$${total.toFixed(2)}`;
+  });
+
+  function uploadReceipt() {
+    const fileInput = document.getElementById("receiptUpload");
+    fileInput.click();
+
+    fileInput.onchange = () => {
+      if (fileInput.files[0]) {
+        const getText = id => document.getElementById(id).textContent;
+
+        document.getElementById("inputName").value = getText("customerName");
+        document.getElementById("inputEmail").value = getText("emailAddress");
+        document.getElementById("replyToField").value = getText("emailAddress");
+        document.getElementById("inputContact").value = getText("contactNumber");
+        document.getElementById("inputHome").value = getText("deliveryAddress");
+        document.getElementById("inputDOB").value = getText("deliveryDate");
+        document.getElementById("inputDriver").value = getText("deliveryTime");
+        document.getElementById("inputWork").value = getText("productsOrdered");
+        document.getElementById("inputAmount").value = getText("totalAmount");
+
+        document.getElementById("receiptForm").submit();
+      }
+    };
+  }
+</script>
 </body>
 </html>
