@@ -4,108 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery Details</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            color: #ffffff;
-            background: linear-gradient(180deg, #1a1f36, #283a5a);
-            text-align: center;
-        }
+   <style>
+  @import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@300;400;700&display=swap");
 
-        h1 {
-            padding: 20px 0;
-            font-size: 2.5rem;
-            color: #00c8ff;
-            text-shadow: 0 0 10px #00c8ff, 0 0 20px #6a5acd;
-        }
+  :root {
+    --font-primary: "Roboto", sans-serif;
+    --font-accent: "Baloo 2", cursive;
+    --color-primary: deeppink;
+    --color-secondary: #ff77c0;
+    --color-hover: #ff91c9;
+    --color-bg: #fff0f6;
+    --color-card-bg: #ffffff;
+    --color-light: #fdfdfd;
+    --color-dark: #333;
+    --color-muted: #555;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.12);
+    --shadow-heavy: rgba(0, 0, 0, 0.2);
+  }
 
-        form {
-            max-width: 500px;
-            margin: auto;
-            padding: 20px;
-            background: rgba(30, 40, 60, 0.95);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+    scroll-behavior: smooth;
+  }
 
-        label {
-            display: block;
-            text-align: left;
-            font-size: 1rem;
-            color: #a5bcd9;
-            margin-top: 15px;
-        }
+  body {
+    background: linear-gradient(to bottom right, var(--color-bg), var(--color-card-bg));
+    color: var(--color-dark);
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: center;
+    overflow-x: hidden;
+  }
 
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #3c516d;
-            font-size: 1rem;
-            background: #243b55;
-            color: #ffffff;
-            transition: 0.3s;
-        }
+  h1 {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    font-family: var(--font-accent);
+    margin: 30px 0 20px;
+    text-shadow: 0 0 8px #ffcde8, 0 0 12px #ffddee;
+    animation: pulseTitle 3s ease-in-out infinite alternate;
+  }
 
-        input:focus, textarea:focus {
-            border-color: #00c8ff;
-            outline: none;
-        }
+  @keyframes pulseTitle {
+    from { text-shadow: 0 0 6px #ffcde8; }
+    to { text-shadow: 0 0 16px var(--color-hover); }
+  }
 
-        .order-summary {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(25, 35, 50, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        }
+  form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: var(--color-light);
+    border-radius: 12px;
+    box-shadow: 0 0 20px var(--shadow-light);
+  }
 
-        .order-summary h2 {
-            font-size: 1.5rem;
-            color: #00c8ff;
-            margin-bottom: 15px;
-        }
+  label {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--color-dark);
+    margin-top: 15px;
+  }
 
-        .total-amount {
-            font-size: 1.5rem;
-            color: #00ff87;
-            margin-top: 10px;
-        }
+  input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #fff;
+    color: var(--color-dark);
+    transition: 0.3s ease;
+  }
 
-        .note {
-            font-size: 0.9rem;
-            color: #a5bcd9;
-            margin-top: 20px;
-        }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--color-hover);
+    outline: none;
+    box-shadow: 0 0 8px var(--color-hover);
+  }
 
-        .note strong {
-            color: #00c8ff;
-        }
+  .order-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--color-light);
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--shadow-light);
+  }
 
-        .submit-container {
-            margin-top: 20px;
-            text-align: center;
-        }
+  .order-summary h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+  }
 
-        .submit-container button {
-            background: linear-gradient(90deg, #00c8ff, #6a5acd);
-            border: none;
-            color: white;
-            padding: 12px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+  .total-amount {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-top: 10px;
+  }
 
-        .submit-container button:hover {
-            background: linear-gradient(90deg, #00ff87, #6a5acd);
-            transform: scale(1.05);
-        }
-    </style>
+  .note {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-top: 20px;
+  }
+
+  .note strong {
+    color: var(--color-primary);
+  }
+
+  .submit-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .submit-container button {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 14px var(--shadow-heavy);
+  }
+
+  .submit-container button:hover {
+    background: linear-gradient(135deg, #ff1493, var(--color-hover));
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-hover);
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .submit-container button {
+      width: 80%;
+      font-size: 1rem;
+    }
+  }
+</style>
 </head>
 <body>
     <h1>Delivery Details</h1>
