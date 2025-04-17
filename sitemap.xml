@@ -3,44 +3,36 @@
   <!-- Homepage -->
   <url>
     <loc>https://singasavors.github.io/K-POD/</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>1.0</priority>
+    <lastmod>2025-04-17</lastmod>
   </url>
-  
-  <!-- Pages -->
+
+  <!-- Product & Feature Pages -->
   <url>
     <loc>https://singasavors.github.io/K-POD/vape.html</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2025-04-17</lastmod>
   </url>
   <url>
     <loc>https://singasavors.github.io/K-POD/new-vape.html</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2025-04-17</lastmod>
   </url>
   <url>
     <loc>https://singasavors.github.io/K-POD/beer1.html</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://singasavors.github.io/K-POD/contact-us.html</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2025-04-17</lastmod>
   </url>
   <url>
     <loc>https://singasavors.github.io/K-POD/esim.html</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2025-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://singasavors.github.io/K-POD/contact-us.html</loc>
+    <lastmod>2025-04-17</lastmod>
   </url>
   <url>
     <loc>https://singasavors.github.io/K-POD/delivery.html</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2025-04-17</lastmod>
   </url>
   <url>
     <loc>https://singasavors.github.io/K-POD/thank-you.html</loc>
-    <lastmod>2025-04-11</lastmod>
-    <priority>0.5</priority>
+    <lastmod>2025-04-17</lastmod>
   </url>
 </urlset>
